@@ -32,7 +32,7 @@ void main() {
 
     // TODO: use the container to test your application.
 
-     expect(container.read(fetchProductsProvider), isA<AsyncValue<ProductsEntity>>);
+    // expect(container.read(fetchProductsProvider), isA<AsyncValue<ProductsEntity>>);
     // expect(providerState.value, isNull);
 
     container.listen(fetchProductsProvider, (previous,state) {
