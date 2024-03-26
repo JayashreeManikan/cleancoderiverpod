@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../Data/Providers/Respository.dart';
 import '../Domain/models/products_entity.dart';
+import '../usecase/get_products.dart';
 import 'ProductDetailScreen.dart';
 
 
@@ -14,7 +15,7 @@ class ProductList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final ProductsValue = ref.watch(fetchProductsProvider);
+    final ProductsValue = ref.watch(fetchProductslistProvider);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Products List',style:TextStyle(fontSize: 25, fontWeight: FontWeight.bold),),backgroundColor: Colors.blue,

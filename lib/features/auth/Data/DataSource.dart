@@ -16,8 +16,9 @@ class ProductsRepository {
     final response = await http.get(
         Uri.https('fakestoreapi.com', '/products'));
       print(response.body);
-    return List<ProductsEntity>.from(
+    final list= List<ProductsEntity>.from(
         jsonDecode(response.body).map((x) => ProductsEntity.fromJson(x)));
+    return list;
   }
 
   Future<ProductdetailEntity> getProductdetail(int id) async {

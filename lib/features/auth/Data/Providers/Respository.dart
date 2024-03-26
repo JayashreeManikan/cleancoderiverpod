@@ -7,7 +7,10 @@ import '../../Domain/models/products_entity.dart';
 import '../../Data/DataSource.dart';
 part 'Respository.g.dart';
 
-
+@riverpod  //Create Provider for the data source -(products repository)(Auto generated provider)
+ProductsRepository productsrepository(ProductsrepositoryRef ref){
+  return ProductsRepository(http.Client());
+}
 
 @riverpod   //Created Future Provider here to fetch the data (Auto generated provider)
 Future<List<ProductsEntity>> fetchProducts(FetchProductsRef ref){
@@ -19,8 +22,5 @@ Future<ProductdetailEntity> getProductsDetails(GetProductsDetailsRef ref, int id
   return ref.watch(productsrepositoryProvider).getProductdetail(id);
 }
 
-@riverpod  //Create Provider for the data source -(products repository)(Auto generated provider)
-ProductsRepository productsrepository(ProductsrepositoryRef ref){
-  return ProductsRepository(http.Client());
-}
+
 
